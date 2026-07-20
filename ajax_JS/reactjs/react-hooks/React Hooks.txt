@@ -1,0 +1,101 @@
+useState: 
+
+ We call it inside a function component to add some local state to it. React will preserve this state between re-renders. useState returns a pair: the current state value and a function that lets you update it. 
+
+const [state, setState] = useState(initialState);
+
+---------------------------------------------------------------------------------------------------------------------
+
+useEffect: 
+
+ used to perform side effects from a function component.
+like fetching data from api, DOM manipulation and timerfunction
+ It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes.
+
+useEffect(callback,dependences)
+
+dependences :- 
+1) without any dependency
+2) empty array
+3) with variable in array
+
+
+useEffect(() => {
+	console.log("useEffect");
+    return () => {
+      console.log("cleanup called");
+    };
+});
+---------------------------------------------------------------------------------------------------------------------------
+useLayoutEffect:
+its similar to useEffect hook only difference in when it runs.
+it runs before react elements print on DOM and useEffect execute after elements got printed
+
+react calculate Components ----> useLayoutEffect ---> react prints elements -------> useEffect
+
+----------------------------------------------------------------------------------------------------------------------------------
+UseContext:
+
+
+is used to manage global data in react Application.
+
+it requires 3 steps
+1) creating the context
+2) providing the context
+3) consuming the context
+
+	export LoginContext = createContext()
+
+	function component() {
+
+	return (
+		<LoginContext.provider value={true}>
+		<MainComponent/>
+		</LoginContext.provider>
+
+		)
+	}
+
+
+ import {LoginContext} from "../component";
+
+function secondComponent(){
+const loginValue = useContext(LoginContext);
+
+}
+-------------------------------------------------------------------------------------------------------------------------
+useRef:
+1) used to access DOM elements
+2)for creating mutable variables which will not re-render the component
+
+its return object with current property
+
+const count = useRef(0);
+
+i.e. count.current is 0
+
+-----------------------------------------------------------------------------------------
+
+useReducer:
+it is used to handle complex state.
+it takes 2 arguments reducer function and initial value
+
+const [currentState, dispatchFunction] = useReducer(reducer, initialValue)
+
+---------------------------------------------------------------------------------------------
+
+useMemo:
+
+ useMemo Hook returns a memoized value.
+
+ memoization means caching a value so that it does not need to be recalculated.
+
+ useMemo Hook only runs when one of its dependencies update.
+
+it is used to improve performance of App.
+-------------------------------------------------------------------------------------------------
+
+CustomHooks:
+
+When we have logic that needs to be used by multiple components, we can extract that logic to a custom Hook.
+

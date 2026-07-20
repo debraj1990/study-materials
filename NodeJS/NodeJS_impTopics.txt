@@ -1,0 +1,85 @@
+Node/Express: 
+Basic Server
+Controllers
+Routes
+MongoDB Atlas
+JWT
+
+
+Routes in NestJS is written inside Controllers.
+Nest JS installation and project creation:-
+npm i -g nest
+nest new <proj name>
+yarn
+
+
+
+in setup, following needs to be considered
+pipe=> for validation
+guard => authentication/authorization
+
+main.ts => starting page
+@controller('user') =>controller contains the route;  For "/" route, keep the controller call empty.
+
+module-name and controller-name needs to be same to link them together or else new folder containing the file will be auto-created
+nest g mo <module-name> => To create Nest module from CLI
+nest g co <controller-name> => To create Nest controller from CLI
+
+@Injectable for DI
+
+
+Kubernetes
+-------------
+NodeJS, NestJS -> Coding
+MongoDB-> DB Solution
+Azure-> storage, deploy AWS, deploy AKS, service bus, monitoring tools (Prometheus)
+
+TS Playground, 
+
+Nov 12,18,26,
+Dec 2,11,24,26,27
+
+nodeJS functions-
+child_process.exec()
+-------------
+Mongoose using MongoDb official client lib under the hood to facilitate connection and other DB interactions but exposes more utility functions than what MongoDB official client provides. therefore Mongoose is a abstraction built on top of MongoDB Driver.
+
+auth(phoneNo)
+connect(phoneNo)
+validated(command)
+action(command)
+
+runFan(phoneNo, command) {	
+	auth(phoneNo)
+	connect(phoneNo)
+	validated(command)
+	action(command)
+}
+runFan(102,command)
+
+agregations in MongoDB equivalent to joins.
+-------------
+
+Azure-> Cloud product
+	Service Bus -> Queues (); npm lib: @azure/service-bus. It has 2 components:- Sender- send in Q; Listener- Listen to Q
+		1000 entries -> to create site
+		->validations()
+		->dbOperations()
+		->caching()
+		
+		instead, can have 
+		1000 entries -> Queue -> receive and process 1 entry at a time
+		->validations()
+		->dbOperations()
+		->caching()
+		->notifyUI()
+		
+		simply process the Queue and subscribe to the updates to get notified
+		
+		
+	Storage Service -> store any file virtually by having a virtual file struct (using /azure storage service npm library)
+	AKS -> Create clusters, in which we can deploy our apps (Can start, stop or monitor running cluster properties)
+	App Service -> another service, in which we can deploy our apps
+	VMS (Virtual MC) 
+
+

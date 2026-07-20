@@ -1,0 +1,41 @@
+Text to Image <= Midjourney (closed API like Mac OS) => Image to Text
+Text to Image <= DALL.E 2 (like Windows but with Open API)=> Image to Text
+Text to Image <= Stable Diffusion (open Source like linux OS)=> Image to Text
+
+
+Create movie poster for futuristic AI titles.
+
+GAN(Generative Adversarial Networks) - Generator & Discriminator working together in a competition over iterations to improve the generator's ability to create realistic data.
+VAE( Variational Auto Encoders) generally referred to as Anomaly Detection - by training with large set normal data to later analyse deviation from it.
+
+purpose of AI: automate repetitive tasks and liberate humanity from dull, difficult or robotic jobs
+
+GenAI can create new content and ideas, including conversations, stories, images, videos, and music.
+
+GenAI in Telecom:
+• Dynamic network optimization, 
+• customer service redefined with AI powered chatbot  (Suitable for UI/UX along with Natural voice generation) L1 chatbot, L2 voice support & L3 (human intervention)summary of analysis
+• Preventive measures to mitigate threats in Cyber Security (Gen AI to Go through own code & 3PP lib to check vulnerabilities)
+• predictive analytics to increase agility, accuracy, and efficiency. [Data driven strategy enacted by Data Analytics]  (Suitable for UI/UX to identify market trends from time to time)
+transform IT & digital labor—with AI automation tools
+
+Gen AI use cases in telecom:
+• Behavior simulation
+• Content personalization
+• Natural voice generation
+• Network optimization
+• Predictive maintenance (to minimize service disruption)
+• Fraud detection
+
+
+Error Recommendation Engine:-
+Input source 1#
+KEDB(Knowledge Error DB) - word Doc to Elastic search in a manner that each error is assigned an ID and meta keywords along with documented solutions
+Input source 2#
+Jenkins Job ID with error logs
+
+Output UI to show:-
+Jenkins Job ID with error logs & recommendations corresponding to each error for job ID
+
+
+Problem statement

@@ -1,0 +1,104 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red27\green29\blue31;\red0\green0\blue0;\red0\green0\blue233;
+\red4\green57\blue192;\red241\green242\blue245;}
+{\*\expandedcolortbl;;\cssrgb\c14118\c15294\c16078;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c93333;
+\cssrgb\c0\c32157\c80000;\cssrgb\c95686\c96078\c96863;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18540\viewh14060\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 ==================================================================\
+Get a new copy from master branch\
+git clone https://(XID)@gerrit.ericsson.se/a/eip-parent/eip_server -b (BranchName)\
+E.g : git clone https://xyzabc@gerrit.ericsson.se/a/eip-parent/eip_server -b v19.2.0\
+==================================================================\
+To submit the code in Git\
+git status (will return the list of modified files, new file, deleted files)\
+git add <file name> (This will add the files for commit operation)\
+git commit -m <"Commit message"> (This will commit the changes)\
+git push origin HEAD:refs/for/master (This will push the changes to master branch)\
+==================================================================\
+For Amend\
+git status\
+git add <file name>\
+git commit --amend (change the commit message if required them :wq!)\
+git push origin HEAD:refs/changes/(Unique URL id)\
+	Example - https://gerrit.ericsson.se/#/c/123456/ \
+	git push origin HEAD:refs/changes/123456   (No Forward Slash in the command)\
+==================================================================\
+Git Status\
+git status (This will display the current status of your local repository)\
+git status -s (This will display the current status of your local repository with short information)\
+git status -sb (This will display the comparison of your local and server repository with current branch and your status)\
+==================================================================\
+Git Add\
+Add command is used to add file for commit operation.\
+git add <filename> (This will add provided file for commit)\
+git add -A (This will add all files - modified, deleted, newly added)\
+git add . (This will only add modified and newly added files)\
+git add -u (This will add modified and deleted files)\
+==================================================================\
+Undo recent commit\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+Suppose git commit -m "Something terribly misguided"\
+git reset HEAD~\
+\cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f1\fs26 \cf3 \expnd0\expndtw0\kerning0
+git reset --soft HEAD^\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 ==================================================================\
+Pull Latest Code from Master\
+git pull --rebase\
+==================================================================\
+Reset Commit Before Push\
+git reset (This will update all the committed files from commit status to uncommitted status)\
+\
+Reset Commit After Push\
+git reset --hard commitId (This will reset entire project to particular commit. This will remove all the changes from project after the provided the committed)\
+\
+Reset to Last Merge\
+git reset --hard origin/v19.2.0 (This will reset the project to last merged)\
+==================================================================\
+Stash the uncommitted changes\
+git stash list (This will give list of stashes with Id)\
+git stash save \'93Title\'94 (This will create the stash copy of uncommitted changes)\
+git stash apply stashId (This will apply the stash to the current branch. Current stash will stay in stash list)\
+git stash drop stashId (This will remove the stash from stash list)\
+git stash pop stashId (This will apply the stash to the current branch. And remove the stash from stash list)\
+git stash show -p stashId (This will show the files with changes which were stored in that stash)\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\partightenfactor0
+\cf0 git fsck --unreachable | grep commit | cut -d\\ -f3 | xargs git log --merges --no-walk --grep=WIP\
+git fsck --unreachable | grep commit | cut -d ' ' -f3 | xargs git log --merges --no-walk --grep=WIP\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/32517870/how-to-undo-git-stash-clear"}}{\fldrslt \cf4 \expnd0\expndtw0\kerning0
+\ul \ulc4 https://stackoverflow.com/questions/32517870/how-to-undo-git-stash-clear}}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 ==================================================================\
+Check Branch\
+git branch (This will give you the branch name currently working on)\
+git branch -r (This will give you list of all branches in master repository)\
+git checkout branchname (This will switch your branch to new branch)\
+==================================================================\
+Remove Untracked Files\
+git clean -d (Remove untracked directories in addition to untracked files.)\
+git clean -n (This will display which file will be cleaned. Wont clean it just display the list)\
+git clean --dry-run (This will display which file will be cleaned. Wont clean it just display the list)\
+git clean -f (Remove the untracked files)\
+\
+\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://bitbucket.org/genaker/mcptt-ios/commits/d3450d20cfc7a670fbc3e134ecc29c62d3d3dfb2"}}{\fldrslt 
+\f1 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 d3450d2}}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+}
